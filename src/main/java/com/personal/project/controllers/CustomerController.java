@@ -13,7 +13,6 @@ import java.util.Optional;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/")
 @Slf4j
 class CustomerController {
 

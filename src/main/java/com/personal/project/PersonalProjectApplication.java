@@ -1,4 +1,4 @@
-package com.personal.personalproject;
+package com.personal.project;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

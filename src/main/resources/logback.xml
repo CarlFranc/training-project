@@ -22,7 +22,7 @@
     <!--        <appender-ref ref = "APPENDER-FILE" />-->
     <!--    </logger>-->
 
-    <logger name = "com.personal.personalproject" level = "all" additivity = "false" >
+    <logger name = "com.personal.project" level = "all" additivity = "false" >
         <appender-ref ref = "APPENDER-CONSOLE" />
         <appender-ref ref = "APPENDER-FILE" />
     </logger>

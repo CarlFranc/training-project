@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: personal-project
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=practice
+    username: joeycarf
+    password: xl2411Z$
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        default_schema: practice
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,beans
+  endpoint:
+    health:
+      show-details: when-authorized
+      probes:
+        enabled: true
+  info:
+    env:
+      enabled: true
+
+server:
+  port: 8085

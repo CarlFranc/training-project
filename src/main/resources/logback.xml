@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="15 seconds">
+
+    <timestamp key="TIMESTAMP" datePattern="yyyyMMddHHmmss"/>
+
+    <appender name = "APPENDER-CONSOLE" class = "ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>[%highlight(%-5level)] %d{dd-MMMM-yyyy HH:mm:ss} [%t] %logger:%L - %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="APPENDER-FILE" class="ch.qos.logback.core.FileAppender">
+        <file>${LOGPATH}/MYAPP_local_${TIMESTAMP}.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>[%-5level] %d{dd-MMMM-yyyy HH:mm:ss} [%t] %logger:%L - %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--    <logger name = "org.springframework.core.env" level = "debug" additivity = "false" >-->
+    <!--        <appender-ref ref = "APPENDER-CONSOLE" />-->
+    <!--        <appender-ref ref = "APPENDER-FILE" />-->
+    <!--    </logger>-->
+
+    <logger name = "com.personal.personalproject" level = "all" additivity = "false" >
+        <appender-ref ref = "APPENDER-CONSOLE" />
+        <appender-ref ref = "APPENDER-FILE" />
+    </logger>
+
+    <root level = "info">
+        <appender-ref ref = "APPENDER-CONSOLE" />
+        <appender-ref ref = "APPENDER-FILE" />
+    </root>
+
+</configuration>

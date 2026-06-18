@@ -1,6 +1,7 @@
 package com.personal.project.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.personal.project.constants.Constants;
 import jakarta.persistence.Column;
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.MappedSuperclass;
@@ -20,11 +21,11 @@ public abstract class Audit {
 
     @CreatedDate
     @Column(name = "created_at" , nullable = false , updatable = false)
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd MMM yyyy HH:mm:ss Z", timezone = "Asia/Manila")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = Constants.DATE_FORMAT, timezone = Constants.TIMEZONE)
     private Instant createdAt;
 
     @LastModifiedDate
     @Column(name = "updated_at")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd MMM yyyy HH:mm:ss Z" , timezone = "Asia/Manila")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = Constants.DATE_FORMAT , timezone = Constants.TIMEZONE)
     private Instant updatedAt;
 }
